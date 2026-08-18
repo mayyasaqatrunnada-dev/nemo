@@ -20,17 +20,13 @@ st.markdown("""
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
-
-/* =========================================================
-   GLOBAL
-   ========================================================= */
-
 html, body, [class*="css"] {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif !important;
 }
 
-.stApp {
+/* BACKGROUND */
 
+.stApp {
     background:
         radial-gradient(
             circle at 10% 10%,
@@ -44,258 +40,187 @@ html, body, [class*="css"] {
         ),
         #DDF3FF;
 
-    color: #17202A;
+    color: #17202A !important;
 }
 
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* HEADER */
 
 .nemo-title {
-
     text-align: center;
-
-    font-family: 'Nunito', sans-serif;
-
     font-size: 58px;
-
     font-weight: 900;
-
     letter-spacing: -2px;
-
-    color: #FF7A3D;
-
+    color: #FF7A3D !important;
     margin-top: 15px;
-
     margin-bottom: -5px;
-
-    text-shadow:
-        0 4px 0 rgba(23, 32, 42, 0.08);
 }
 
-
 .nemo-subtitle {
-
     text-align: center;
-
-    font-family: 'Nunito', sans-serif;
-
     font-size: 18px;
-
     font-weight: 800;
-
-    color: #17202A;
-
+    color: #17202A !important;
     letter-spacing: 1px;
-
     margin-bottom: 5px;
 }
 
-
 .nemo-description {
-
     text-align: center;
-
     font-size: 14px;
-
     font-weight: 600;
-
-    color: #426075;
-
+    color: #17202A !important;
     margin-bottom: 35px;
 }
 
 
-/* =========================================================
-   SECTION TITLE
-   ========================================================= */
+/* SECTION */
 
 .section-title {
-
     text-align: center;
-
     font-size: 24px;
-
     font-weight: 900;
-
-    color: #17202A;
-
+    color: #17202A !important;
     margin-top: 10px;
-
     margin-bottom: 20px;
 }
 
 
-/* =========================================================
-   FEATURE CARD
-   ========================================================= */
+/* CARD */
 
 .feature-card {
-
     background: #F8FCFF;
-
     border: 2px solid #B9DDF5;
-
     border-radius: 24px;
-
     padding: 22px;
-
     min-height: 155px;
-
     margin-bottom: 12px;
 
     box-shadow:
         0 8px 20px rgba(54, 112, 150, 0.12);
 }
 
-
-/* =========================================================
-   ICON
-   ========================================================= */
-
 .feature-icon {
-
     font-size: 34px;
-
     margin-bottom: 5px;
 }
 
-
-/* =========================================================
-   CARD TITLE
-   ========================================================= */
-
 .feature-title {
-
     font-size: 19px;
-
     font-weight: 900;
-
-    color: #17202A;
-
+    color: #17202A !important;
     margin-top: 4px;
 }
 
-
-/* =========================================================
-   CARD DESCRIPTION
-   ========================================================= */
-
 .feature-description {
-
     font-size: 13px;
-
     font-weight: 600;
-
     line-height: 1.5;
-
-    color: #607889;
-
+    color: #17202A !important;
     margin-top: 5px;
 }
 
 
-/* =========================================================
-   BUTTON
-   ========================================================= */
+/* SEMUA TOMBOL */
 
 div.stButton > button {
-
     width: 100%;
-
     border-radius: 14px;
 
     border: 2px solid #FF7A3D;
-
     background-color: #FF7A3D;
 
-    color: #17202A;
+    color: #17202A !important;
 
-    font-family: 'Nunito', sans-serif;
-
+    font-family: 'Nunito', sans-serif !important;
     font-size: 14px;
-
     font-weight: 900;
 
     padding: 10px 15px;
-
-    transition: 0.2s;
 
     box-shadow:
         0 5px 12px rgba(255, 122, 61, 0.20);
 }
 
-
 div.stButton > button:hover {
-
     background-color: #4A9FE8;
-
     border-color: #4A9FE8;
-
-    color: white;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 7px 16px rgba(74, 159, 232, 0.25);
-}
-
-
-/* =========================================================
-   HEADINGS
-   ========================================================= */
-
-h1, h2, h3 {
-
-    font-family: 'Nunito', sans-serif !important;
-
-    font-weight: 900 !important;
 
     color: #17202A !important;
 }
 
 
-/* =========================================================
-   INPUT
-   ========================================================= */
+/* SEMUA HEADING */
 
-input {
-
+h1, h2, h3, h4 {
     font-family: 'Nunito', sans-serif !important;
-
+    font-weight: 900 !important;
+    color: #17202A !important;
 }
 
 
-/* =========================================================
-   DIVIDER
-   ========================================================= */
+/* TEKS STREAMLIT */
+
+p, label, span, div {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* INPUT */
+
+input, textarea {
+    font-family: 'Nunito', sans-serif !important;
+    color: #17202A !important;
+}
+
+
+/* DROPDOWN */
+
+div[data-baseweb="select"] {
+    color: #17202A !important;
+}
+
+
+/* SUCCESS / INFO / WARNING / ERROR */
+
+div[data-testid="stAlert"] {
+    color: #17202A !important;
+}
+
+div[data-testid="stAlert"] p {
+    color: #17202A !important;
+}
+
+
+/* METRIC */
+
+[data-testid="stMetricValue"] {
+    color: #17202A !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #17202A !important;
+}
+
+
+/* DIVIDER */
 
 hr {
-
     border-color: #A9D5EF !important;
-
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* FOOTER */
 
 .footer {
-
     text-align: center;
-
-    color: #638094;
+    color: #17202A !important;
 
     font-family: 'Nunito', sans-serif;
-
     font-size: 12px;
-
     font-weight: 700;
 
     margin-top: 45px;
-
     padding-bottom: 20px;
 }
 
