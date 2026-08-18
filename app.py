@@ -50,7 +50,7 @@ if menu == "🏠 Home":
     )
 
     st.info(
-        "Pilih salah satu fitur di menu sebelah kiri."
+        "Hari ini mau ngapain?."
     )
 
 
