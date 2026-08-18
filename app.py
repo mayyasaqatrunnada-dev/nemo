@@ -1,30 +1,9 @@
 import streamlit as st
-st.markdown("""
-<style>
-    .main-title {
-        text-align: center;
-        font-size: 48px;
-        font-weight: 700;
-        margin-bottom: 0;
-    }
 
-    .subtitle {
-        text-align: center;
-        font-size: 18px;
-        margin-top: 0;
-    }
-
-    .description {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# ==============================
+# ============================================================
 # NEMO
 # Know What Matters.
-# ==============================
+# ============================================================
 
 st.set_page_config(
     page_title="NEMO",
@@ -32,65 +11,233 @@ st.set_page_config(
     layout="centered"
 )
 
-# ==============================
-# JUDUL
-# ==============================
+# ============================================================
+# STYLE
+# ============================================================
+
+st.markdown("""
+<style>
+
+    /* BACKGROUND */
+    .stApp {
+        background-color: #0B0F14;
+        color: #F5F5F5;
+    }
+
+    /* MAIN TITLE */
+    .nemo-title {
+        text-align: center;
+        font-size: 52px;
+        font-weight: 800;
+        color: #FF7A00;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    .nemo-subtitle {
+        text-align: center;
+        font-size: 18px;
+        color: #2196F3;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .nemo-description {
+        text-align: center;
+        color: #B8C0CC;
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+        color: #FFFFFF;
+        font-size: 25px;
+        font-weight: 700;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* CARD */
+    .feature-card {
+        background-color: #151B23;
+        border: 1px solid #263241;
+        border-radius: 16px;
+        padding: 20px;
+        min-height: 150px;
+        margin-bottom: 15px;
+    }
+
+    .feature-icon {
+        font-size: 30px;
+    }
+
+    .feature-title {
+        font-size: 19px;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-top: 5px;
+    }
+
+    .feature-description {
+        font-size: 13px;
+        color: #AAB4C0;
+    }
+
+    /* ORANGE BUTTON */
+    div.stButton > button {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid #FF7A00;
+        background-color: #FF7A00;
+        color: #FFFFFF;
+        font-weight: 700;
+        padding: 10px;
+    }
+
+    div.stButton > button:hover {
+        background-color: #2196F3;
+        border-color: #2196F3;
+        color: #FFFFFF;
+    }
+
+    /* FOOTER */
+    .footer {
+        text-align: center;
+        color: #697586;
+        font-size: 12px;
+        margin-top: 40px;
+        padding-bottom: 20px;
+    }
+
+</style>
+""", unsafe_allow_html=True)
+
+
+# ============================================================
+# HEADER
+# ============================================================
 
 st.markdown(
-    '<div class="main-title">🐟 NEMO</div>',
+    '<div class="nemo-title">🐟 NEMO</div>',
     unsafe_allow_html=True
 )
 
 st.markdown(
-    '<div class="subtitle"><i>Know What Matters.</i></div>',
+    '<div class="nemo-subtitle"><i>Know What Matters.</i></div>',
     unsafe_allow_html=True
 )
 
 st.markdown(
-    '<div class="description">Student Life Management Assistant</div>',
+    '<div class="nemo-description">'
+    'Student Life Management Assistant'
+    '</div>',
     unsafe_allow_html=True
 )
 
-st.divider()
 
-# ==============================
+# ============================================================
 # MENU
-# ==============================
+# ============================================================
 
-menu = st.selectbox(
-    "Pilih fitur",
-    [
-        "🏠 Home",
-        "📊 Cek Nilai",
-        "📋 Prioritas Tugas",
-        "⏰ Study Planner",
-        "💸 Duid Tracker"
-    ]
-)
+if "menu" not in st.session_state:
+    st.session_state.menu = "Home"
 
-# ==============================
+
+# ============================================================
 # HOME
-# ==============================
+# ============================================================
 
-if menu == "🏠 Home":
+if st.session_state.menu == "Home":
 
-    st.header("Hai! 👋")
-
-    st.write(
-        "NEMO membantu kamu mengatur nilai, tugas, "
-        "waktu belajar, dan keuangan sederhana."
+    st.markdown(
+        '<div class="section-title">Mau ngapain hari ini?</div>',
+        unsafe_allow_html=True
     )
 
-    st.info(
-        "Hari ini mau ngapain 😄?"
-    )
+    # ---------- ROW 1 ----------
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        st.markdown("""
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <div class="feature-title">Cek Nilai</div>
+            <div class="feature-description">
+                Hitung rata-rata dan lihat performa akademikmu.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        if st.button("Buka Cek Nilai", key="nilai"):
+            st.session_state.menu = "Cek Nilai"
+            st.rerun()
+
+    with col2:
+
+        st.markdown("""
+        <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <div class="feature-title">Prioritas Tugas</div>
+            <div class="feature-description">
+                Tentukan tugas mana yang harus dikerjakan dulu.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        if st.button("Buka Prioritas", key="prioritas"):
+            st.session_state.menu = "Prioritas Tugas"
+            st.rerun()
 
 
-# ==============================
+    # ---------- ROW 2 ----------
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        st.markdown("""
+        <div class="feature-card">
+            <div class="feature-icon">⏰</div>
+            <div class="feature-title">Study Planner</div>
+            <div class="feature-description">
+                Bagi waktu belajar berdasarkan jumlah tugas.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        if st.button("Buka Planner", key="planner"):
+            st.session_state.menu = "Study Planner"
+            st.rerun()
+
+    with col2:
+
+        st.markdown("""
+        <div class="feature-card">
+            <div class="feature-icon">💸</div>
+            <div class="feature-title">Duid Tracker</div>
+            <div class="feature-description">
+                Pantau pemasukan, pengeluaran, dan sisa uang.
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        if st.button("Buka Duid Tracker", key="duid"):
+            st.session_state.menu = "Duid Tracker"
+            st.rerun()
+
+
+# ============================================================
 # CEK NILAI
-# ==============================
+# ============================================================
 
-elif menu == "📊 Cek Nilai":
+elif st.session_state.menu == "Cek Nilai":
+
+    if st.button("← Kembali ke Home"):
+        st.session_state.menu = "Home"
+        st.rerun()
 
     st.header("📊 Cek Nilai")
 
@@ -129,9 +276,11 @@ elif menu == "📊 Cek Nilai":
     if st.button("Hitung Nilai"):
 
         if len(nilai) == 0:
+
             st.warning("Masukkan minimal satu nilai.")
 
         else:
+
             rata = sum(nilai) / len(nilai)
 
             if rata >= 90:
@@ -143,22 +292,32 @@ elif menu == "📊 Cek Nilai":
             else:
                 predikat = "Perlu Ditingkatkan"
 
-            st.success("Hasil berhasil dihitung!")
+            st.success("Nilai berhasil dihitung.")
 
             col1, col2 = st.columns(2)
 
             with col1:
-                st.metric("Rata-rata", f"{rata:.2f}")
+                st.metric(
+                    "Rata-rata",
+                    f"{rata:.2f}"
+                )
 
             with col2:
-                st.metric("Predikat", predikat)
+                st.metric(
+                    "Predikat",
+                    predikat
+                )
 
 
-# ==============================
+# ============================================================
 # PRIORITAS TUGAS
-# ==============================
+# ============================================================
 
-elif menu == "📋 Prioritas Tugas":
+elif st.session_state.menu == "Prioritas Tugas":
+
+    if st.button("← Kembali ke Home"):
+        st.session_state.menu = "Home"
+        st.rerun()
 
     st.header("📋 Prioritas Tugas")
 
@@ -199,7 +358,6 @@ elif menu == "📋 Prioritas Tugas":
 
         if nama:
 
-            # Menentukan skor urgensi
             if deadline <= 1:
                 urgensi = 5
             elif deadline <= 3:
@@ -223,6 +381,7 @@ elif menu == "📋 Prioritas Tugas":
     if st.button("Tentukan Prioritas"):
 
         if not tugas:
+
             st.warning("Masukkan minimal satu tugas.")
 
         else:
@@ -234,25 +393,25 @@ elif menu == "📋 Prioritas Tugas":
 
             st.subheader("Urutan Prioritas")
 
-            for i, tugas_data in enumerate(tugas, 1):
+            for i, data in enumerate(tugas, 1):
 
-                if tugas_data["skor"] >= 8:
+                if data["skor"] >= 8:
                     status = "🔴 Tinggi"
-                elif tugas_data["skor"] >= 5:
+                elif data["skor"] >= 5:
                     status = "🟡 Sedang"
                 else:
-                    status = "🟢 Rendah"
+                    status = "🔵 Rendah"
 
                 st.write(
-                    f"**{i}. {tugas_data['nama']}**"
+                    f"**{i}. {data['nama']}**"
                 )
 
                 st.write(
-                    f"Deadline: {tugas_data['deadline']} hari lagi"
+                    f"Deadline: {data['deadline']} hari lagi"
                 )
 
                 st.write(
-                    f"Kesulitan: {tugas_data['kesulitan']}/5"
+                    f"Kesulitan: {data['kesulitan']}/5"
                 )
 
                 st.write(
@@ -262,11 +421,15 @@ elif menu == "📋 Prioritas Tugas":
                 st.divider()
 
 
-# ==============================
+# ============================================================
 # STUDY PLANNER
-# ==============================
+# ============================================================
 
-elif menu == "⏰ Study Planner":
+elif st.session_state.menu == "Study Planner":
+
+    if st.button("← Kembali ke Home"):
+        st.session_state.menu = "Home"
+        st.rerun()
 
     st.header("⏰ Study Planner")
 
@@ -290,7 +453,7 @@ elif menu == "⏰ Study Planner":
 
         waktu_per_tugas = waktu / jumlah
 
-        st.success("Rencana berhasil dibuat!")
+        st.success("Rencana berhasil dibuat.")
 
         st.metric(
             "Waktu per tugas",
@@ -298,26 +461,33 @@ elif menu == "⏰ Study Planner":
         )
 
         if waktu_per_tugas >= 2:
+
             st.write(
-                "Waktu cukup longgar. Fokus pada kualitas."
+                "Waktu cukup longgar. Fokus pada kualitas pengerjaan."
             )
 
         elif waktu_per_tugas >= 1:
+
             st.write(
-                "Waktu cukup. Kurangi distraksi."
+                "Waktu cukup. Kurangi distraksi selama belajar."
             )
 
         else:
+
             st.warning(
                 "Waktu cukup sempit. Prioritaskan tugas terpenting."
             )
 
 
-# ==============================
+# ============================================================
 # DUIT TRACKER
-# ==============================
+# ============================================================
 
-elif menu == "💸 Duid Tracker":
+elif st.session_state.menu == "Duid Tracker":
+
+    if st.button("← Kembali ke Home"):
+        st.session_state.menu = "Home"
+        st.rerun()
 
     st.header("💸 Duid Tracker")
 
@@ -343,12 +513,14 @@ elif menu == "💸 Duid Tracker":
         col1, col2 = st.columns(2)
 
         with col1:
+
             kategori = st.text_input(
                 f"Kategori {i+1}",
                 key=f"kategori_{i}"
             )
 
         with col2:
+
             nominal = st.number_input(
                 f"Nominal {i+1}",
                 min_value=0.0,
@@ -358,6 +530,7 @@ elif menu == "💸 Duid Tracker":
             )
 
         if kategori:
+
             pengeluaran.append({
                 "kategori": kategori,
                 "nominal": nominal
@@ -366,7 +539,8 @@ elif menu == "💸 Duid Tracker":
     if st.button("Hitung Keuangan"):
 
         total = sum(
-            x["nominal"] for x in pengeluaran
+            x["nominal"]
+            for x in pengeluaran
         )
 
         sisa = pemasukan - total
@@ -374,34 +548,52 @@ elif menu == "💸 Duid Tracker":
         col1, col2, col3 = st.columns(3)
 
         with col1:
+
             st.metric(
                 "Pemasukan",
                 f"Rp{pemasukan:,.0f}"
             )
 
         with col2:
+
             st.metric(
                 "Pengeluaran",
                 f"Rp{total:,.0f}"
             )
 
         with col3:
+
             st.metric(
                 "Sisa",
                 f"Rp{sisa:,.0f}"
             )
 
         if sisa < 0:
+
             st.error(
                 "Pengeluaran lebih besar daripada pemasukan."
             )
 
         elif sisa == 0:
+
             st.warning(
                 "Uang kamu habis."
             )
 
         else:
+
             st.success(
                 "Keuangan masih aman."
             )
+
+
+# ============================================================
+# FOOTER
+# ============================================================
+
+st.markdown(
+    '<div class="footer">'
+    'NEMO • Know What Matters.'
+    '</div>',
+    unsafe_allow_html=True
+        )
