@@ -228,7 +228,16 @@ if st.session_state.menu == "Home":
             st.session_state.menu = "Duid Tracker"
             st.rerun()
 
+# ============================================================
+# ABOUT NEMO
+# ============================================================
 
+st.divider()
+
+if st.button("ℹ️ Tentang NEMO", key="about_button"):
+    st.session_state.menu = "About NEMO"
+    st.rerun()
+    
 # ============================================================
 # CEK NILAI
 # ============================================================
@@ -307,7 +316,33 @@ elif st.session_state.menu == "Cek Nilai":
                     "Predikat",
                     predikat
                 )
+if rata >= 90:
 
+    st.success(
+        "💡 Insight: Performa akademikmu sangat baik. "
+        "Pertahankan konsistensinya."
+    )
+
+elif rata >= 80:
+
+    st.info(
+        "💡 Insight: Performa akademikmu sudah baik. "
+        "Masih ada ruang untuk meningkatkan beberapa nilai."
+    )
+
+elif rata >= 70:
+
+    st.warning(
+        "💡 Insight: Nilaimu cukup, tetapi masih perlu ditingkatkan. "
+        "Fokus pada mata pelajaran dengan nilai terendah."
+    )
+
+else:
+
+    st.error(
+        "💡 Insight: Nilai masih perlu banyak ditingkatkan. "
+        "Coba buat jadwal belajar yang lebih teratur."
+    )
 
 # ============================================================
 # PRIORITAS TUGAS
@@ -462,21 +497,24 @@ elif st.session_state.menu == "Study Planner":
 
         if waktu_per_tugas >= 2:
 
-            st.write(
-                "Waktu cukup longgar. Fokus pada kualitas pengerjaan."
-            )
+    st.success(
+        "💡 Insight: Waktu cukup longgar. "
+        "Kamu bisa fokus pada kualitas pengerjaan."
+    )
 
-        elif waktu_per_tugas >= 1:
+elif waktu_per_tugas >= 1:
 
-            st.write(
-                "Waktu cukup. Kurangi distraksi selama belajar."
-            )
+    st.info(
+        "💡 Insight: Waktu cukup. "
+        "Usahakan mengurangi distraksi selama belajar."
+    )
 
-        else:
+else:
 
-            st.warning(
-                "Waktu cukup sempit. Prioritaskan tugas terpenting."
-            )
+    st.warning(
+        "💡 Insight: Waktu cukup sempit. "
+        "Kerjakan tugas dengan prioritas tertinggi terlebih dahulu."
+    )
 
 
 # ============================================================
@@ -582,11 +620,71 @@ elif st.session_state.menu == "Duid Tracker":
 
         else:
 
-            st.success(
-                "Keuangan masih aman."
-            )
+    persentase_sisa = (sisa / pemasukan) * 100
 
+    st.success(
+        "Keuangan masih aman."
+    )
 
+    st.info(
+        f"💡 Insight: Kamu masih memiliki "
+        f"{persentase_sisa:.1f}% dari pemasukanmu."
+    )
+
+# ============================================================
+# ABOUT PAGE
+# ============================================================
+
+if st.session_state.menu == "About NEMO":
+
+    if st.button("← Kembali ke Home", key="back_about"):
+        st.session_state.menu = "Home"
+        st.rerun()
+
+    st.header("ℹ️ Tentang NEMO")
+
+    st.write(
+        """
+        **NEMO (Know What Matters.)** adalah Student Life
+        Management Assistant yang dirancang untuk membantu
+        siswa mengelola beberapa kebutuhan sehari-hari
+        dalam satu platform sederhana.
+        """
+    )
+
+    st.subheader("Apa yang bisa dilakukan NEMO?")
+
+    st.write("📊 **Cek Nilai**")
+    st.write(
+        "Menghitung rata-rata nilai dan memberikan predikat akademik."
+    )
+
+    st.write("📋 **Prioritas Tugas**")
+    st.write(
+        "Menentukan prioritas tugas berdasarkan deadline dan tingkat kesulitan."
+    )
+
+    st.write("⏰ **Study Planner**")
+    st.write(
+        "Membantu membagi waktu belajar berdasarkan jumlah tugas."
+    )
+
+    st.write("💸 **Duid Tracker**")
+    st.write(
+        "Menghitung pemasukan, pengeluaran, dan sisa uang."
+    )
+
+    st.subheader("Teknologi")
+
+    st.write(
+        "🐍 Python  •  Streamlit  •  GitHub  •  Google Colab"
+    )
+
+    st.info(
+        "NEMO dibuat untuk membantu pengguna mengetahui "
+        "apa yang penting dan menentukan prioritas dengan lebih mudah."
+    )
+    
 # ============================================================
 # FOOTER
 # ============================================================
