@@ -28,6 +28,7 @@ if "dark_mode" not in st.session_state:
 
 if st.session_state.dark_mode:
 
+    # DARK MODE
     bg_color = "#DDF3FF"
     card_color = "#171717"
     main_text = "#FFFFFF"
@@ -36,7 +37,8 @@ if st.session_state.dark_mode:
 
 else:
 
-    bg_color = "#DDF3FF"
+    # LIGHT MODE
+    bg_color = "#1769AA"
     card_color = "#F8FCFF"
     main_text = "#17202A"
     secondary_text = "#17202A"
@@ -56,9 +58,10 @@ st.markdown(
         wght@400;500;600;700;800;900&display=swap'
     );
 
-    /* ==============================
+
+    /* ========================================================
        GLOBAL
-       ============================== */
+       ======================================================== */
 
     html, body, [class*="css"] {{
         font-family: 'Nunito', sans-serif !important;
@@ -70,9 +73,9 @@ st.markdown(
     }}
 
 
-    /* ==============================
+    /* ========================================================
        HEADER
-       ============================== */
+       ======================================================== */
 
     .nemo-title {{
         text-align: center;
@@ -100,6 +103,8 @@ st.markdown(
         color: {main_text} !important;
 
         letter-spacing: 1px;
+
+        margin-bottom: 5px;
     }}
 
     .nemo-description {{
@@ -115,9 +120,9 @@ st.markdown(
     }}
 
 
-    /* ==============================
-       SECTION
-       ============================== */
+    /* ========================================================
+       SECTION TITLE
+       ======================================================== */
 
     .section-title {{
         text-align: center;
@@ -134,9 +139,9 @@ st.markdown(
     }}
 
 
-    /* ==============================
+    /* ========================================================
        FEATURE CARD
-       ============================== */
+       ======================================================== */
 
     .feature-card {{
 
@@ -153,11 +158,13 @@ st.markdown(
         margin-bottom: 12px;
 
         box-shadow:
-            0 8px 20px rgba(54, 112, 150, 0.15);
+            0 8px 20px rgba(0, 0, 0, 0.18);
     }}
 
     .feature-icon {{
         font-size: 34px;
+
+        margin-bottom: 5px;
     }}
 
     .feature-title {{
@@ -185,9 +192,9 @@ st.markdown(
     }}
 
 
-    /* ==============================
+    /* ========================================================
        BUTTON
-       ============================== */
+       ======================================================== */
 
     div.stButton > button {{
 
@@ -215,17 +222,17 @@ st.markdown(
 
     div.stButton > button:hover {{
 
-        background-color: #4A9FE8;
+        background-color: #4A9FE8 !important;
 
-        border-color: #4A9FE8;
+        border-color: #4A9FE8 !important;
 
         color: #17202A !important;
     }}
 
 
-    /* ==============================
+    /* ========================================================
        HEADINGS
-       ============================== */
+       ======================================================== */
 
     h1, h2, h3, h4 {{
 
@@ -237,21 +244,21 @@ st.markdown(
     }}
 
 
-    /* ==============================
-       NORMAL TEXT
-       ============================== */
+    /* ========================================================
+       TEXT
+       ======================================================== */
 
     p, label {{
 
-        color: {main_text} !important;
-
         font-family: 'Nunito', sans-serif !important;
+
+        color: {main_text} !important;
     }}
 
 
-    /* ==============================
+    /* ========================================================
        INPUT
-       ============================== */
+       ======================================================== */
 
     input, textarea {{
 
@@ -265,9 +272,9 @@ st.markdown(
     }}
 
 
-    /* ==============================
+    /* ========================================================
        METRIC
-       ============================== */
+       ======================================================== */
 
     [data-testid="stMetricValue"] {{
 
@@ -280,9 +287,9 @@ st.markdown(
     }}
 
 
-    /* ==============================
+    /* ========================================================
        ALERT
-       ============================== */
+       ======================================================== */
 
     [data-testid="stAlert"] p {{
 
@@ -290,9 +297,9 @@ st.markdown(
     }}
 
 
-    /* ==============================
+    /* ========================================================
        FOOTER
-       ============================== */
+       ======================================================== */
 
     .footer {{
 
@@ -347,13 +354,21 @@ with col2:
 
     if st.session_state.dark_mode:
 
-        if st.button("☀️ Light Mode", key="theme_button"):
+        if st.button(
+            "☀️ Light Mode",
+            key="theme_button"
+        ):
+
             st.session_state.dark_mode = False
             st.rerun()
 
     else:
 
-        if st.button("🌙 Dark Mode", key="theme_button"):
+        if st.button(
+            "🌙 Dark Mode",
+            key="theme_button"
+        ):
+
             st.session_state.dark_mode = True
             st.rerun()
 
@@ -371,6 +386,10 @@ if st.session_state.menu == "Home":
         unsafe_allow_html=True
     )
 
+    # ========================================================
+    # ROW 1
+    # ========================================================
+
     col1, col2 = st.columns(2)
 
     with col1:
@@ -379,15 +398,18 @@ if st.session_state.menu == "Home":
             """
             <div class="feature-card">
 
-            <div class="feature-icon">📊</div>
+                <div class="feature-icon">
+                    📊
+                </div>
 
-            <div class="feature-title">
-            Cek Nilai
-            </div>
+                <div class="feature-title">
+                    Cek Nilai
+                </div>
 
-            <div class="feature-description">
-            Hitung rata-rata dan lihat performa akademikmu.
-            </div>
+                <div class="feature-description">
+                    Hitung rata-rata dan lihat
+                    performa akademikmu.
+                </div>
 
             </div>
             """,
@@ -409,15 +431,18 @@ if st.session_state.menu == "Home":
             """
             <div class="feature-card">
 
-            <div class="feature-icon">📋</div>
+                <div class="feature-icon">
+                    📋
+                </div>
 
-            <div class="feature-title">
-            Prioritas Tugas
-            </div>
+                <div class="feature-title">
+                    Prioritas Tugas
+                </div>
 
-            <div class="feature-description">
-            Tentukan tugas mana yang harus dikerjakan dulu.
-            </div>
+                <div class="feature-description">
+                    Tentukan tugas mana yang
+                    harus dikerjakan lebih dulu.
+                </div>
 
             </div>
             """,
@@ -433,6 +458,10 @@ if st.session_state.menu == "Home":
             st.rerun()
 
 
+    # ========================================================
+    # ROW 2
+    # ========================================================
+
     col1, col2 = st.columns(2)
 
     with col1:
@@ -441,15 +470,18 @@ if st.session_state.menu == "Home":
             """
             <div class="feature-card">
 
-            <div class="feature-icon">⏰</div>
+                <div class="feature-icon">
+                    ⏰
+                </div>
 
-            <div class="feature-title">
-            Study Planner
-            </div>
+                <div class="feature-title">
+                    Study Planner
+                </div>
 
-            <div class="feature-description">
-            Bagi waktu belajar berdasarkan jumlah tugas.
-            </div>
+                <div class="feature-description">
+                    Bagi waktu belajar berdasarkan
+                    jumlah tugas dan waktu tersedia.
+                </div>
 
             </div>
             """,
@@ -471,15 +503,18 @@ if st.session_state.menu == "Home":
             """
             <div class="feature-card">
 
-            <div class="feature-icon">💸</div>
+                <div class="feature-icon">
+                    💸
+                </div>
 
-            <div class="feature-title">
-            Duid Tracker
-            </div>
+                <div class="feature-title">
+                    Duid Tracker
+                </div>
 
-            <div class="feature-description">
-            Pantau pemasukan, pengeluaran, dan sisa uang.
-            </div>
+                <div class="feature-description">
+                    Pantau pemasukan, pengeluaran,
+                    dan sisa uangmu.
+                </div>
 
             </div>
             """,
@@ -496,6 +531,11 @@ if st.session_state.menu == "Home":
 
 
     st.divider()
+
+
+    # ========================================================
+    # ABOUT
+    # ========================================================
 
     if st.button(
         "ℹ️ Tentang NEMO",
@@ -561,6 +601,7 @@ elif st.session_state.menu == "Cek Nilai":
         if nama:
             nilai.append(angka)
 
+
     if st.button(
         "Hitung Nilai",
         key="hitung_nilai"
@@ -592,9 +633,11 @@ elif st.session_state.menu == "Cek Nilai":
 
                 predikat = "Perlu Ditingkatkan"
 
+
             st.success(
                 "Nilai berhasil dihitung."
             )
+
 
             col1, col2 = st.columns(2)
 
@@ -610,34 +653,6 @@ elif st.session_state.menu == "Cek Nilai":
                 st.metric(
                     "Predikat",
                     predikat
-                )
-
-            if rata >= 90:
-
-                st.success(
-                    "💡 Insight: Performa akademikmu sangat baik. "
-                    "Pertahankan konsistensinya."
-                )
-
-            elif rata >= 80:
-
-                st.info(
-                    "💡 Insight: Performa akademikmu sudah baik. "
-                    "Masih ada ruang untuk meningkatkan beberapa nilai."
-                )
-
-            elif rata >= 70:
-
-                st.warning(
-                    "💡 Insight: Nilaimu cukup. "
-                    "Fokus pada mata pelajaran dengan nilai terendah."
-                )
-
-            else:
-
-                st.error(
-                    "💡 Insight: Nilai masih perlu ditingkatkan. "
-                    "Coba buat jadwal belajar yang lebih teratur."
                 )
 
 
@@ -658,7 +673,7 @@ elif st.session_state.menu == "Prioritas Tugas":
     st.header("📋 Prioritas Tugas")
 
     st.write(
-        "NEMO menentukan prioritas berdasarkan deadline "
+        "Tentukan prioritas berdasarkan deadline "
         "dan tingkat kesulitan."
     )
 
@@ -702,23 +717,18 @@ elif st.session_state.menu == "Prioritas Tugas":
         if nama:
 
             if deadline <= 1:
-
                 urgensi = 5
 
             elif deadline <= 3:
-
                 urgensi = 4
 
             elif deadline <= 5:
-
                 urgensi = 3
 
             elif deadline <= 7:
-
                 urgensi = 2
 
             else:
-
                 urgensi = 1
 
             skor = urgensi + kesulitan
@@ -731,6 +741,7 @@ elif st.session_state.menu == "Prioritas Tugas":
                     "skor": skor
                 }
             )
+
 
     if st.button(
         "Tentukan Prioritas",
@@ -829,6 +840,7 @@ elif st.session_state.menu == "Study Planner":
         step=1
     )
 
+
     if st.button(
         "Buat Rencana",
         key="buat_rencana"
@@ -845,30 +857,9 @@ elif st.session_state.menu == "Study Planner":
             f"{waktu_per_tugas:.2f} jam"
         )
 
-        if waktu_per_tugas >= 2:
-
-            st.success(
-                "💡 Insight: Waktu cukup longgar. "
-                "Kamu bisa fokus pada kualitas pengerjaan."
-            )
-
-        elif waktu_per_tugas >= 1:
-
-            st.info(
-                "💡 Insight: Waktu cukup. "
-                "Kurangi distraksi selama belajar."
-            )
-
-        else:
-
-            st.warning(
-                "💡 Insight: Waktu cukup sempit. "
-                "Kerjakan tugas dengan prioritas tertinggi."
-            )
-
 
 # ============================================================
-# DUIT TRACKER
+# DUId TRACKER
 # ============================================================
 
 elif st.session_state.menu == "Duid Tracker":
@@ -884,8 +875,8 @@ elif st.session_state.menu == "Duid Tracker":
     st.header("💸 Duid Tracker")
 
     st.write(
-        "Catat pemasukan dan pengeluaran untuk mengetahui "
-        "kondisi keuangan sederhana."
+        "Catat pemasukan dan pengeluaran "
+        "untuk mengetahui sisa uang."
     )
 
     pemasukan = st.number_input(
@@ -903,7 +894,8 @@ elif st.session_state.menu == "Duid Tracker":
         step=1
     )
 
-    pengeluaran = []
+    total_pengeluaran = 0
+
 
     for i in range(int(jumlah)):
 
@@ -911,7 +903,7 @@ elif st.session_state.menu == "Duid Tracker":
 
         with col1:
 
-            kategori = st.text_input(
+            st.text_input(
                 f"Kategori {i + 1}",
                 key=f"kategori_{i}"
             )
@@ -926,26 +918,15 @@ elif st.session_state.menu == "Duid Tracker":
                 key=f"nominal_{i}"
             )
 
-        if kategori:
+            total_pengeluaran += nominal
 
-            pengeluaran.append(
-                {
-                    "kategori": kategori,
-                    "nominal": nominal
-                }
-            )
 
     if st.button(
         "Hitung Keuangan",
         key="hitung_keuangan"
     ):
 
-        total = sum(
-            item["nominal"]
-            for item in pengeluaran
-        )
-
-        sisa = pemasukan - total
+        sisa = pemasukan - total_pengeluaran
 
         col1, col2, col3 = st.columns(3)
 
@@ -960,7 +941,7 @@ elif st.session_state.menu == "Duid Tracker":
 
             st.metric(
                 "Pengeluaran",
-                f"Rp{total:,.0f}"
+                f"Rp{total_pengeluaran:,.0f}"
             )
 
         with col3:
@@ -988,17 +969,6 @@ elif st.session_state.menu == "Duid Tracker":
                 "Keuangan masih aman."
             )
 
-            if pemasukan > 0:
-
-                persentase_sisa = (
-                    sisa / pemasukan
-                ) * 100
-
-                st.info(
-                    f"💡 Insight: Kamu masih memiliki "
-                    f"{persentase_sisa:.1f}% dari pemasukanmu."
-                )
-
 
 # ============================================================
 # ABOUT NEMO
@@ -1019,33 +989,43 @@ elif st.session_state.menu == "About NEMO":
     st.write(
         """
         **NEMO (Know What Matters.)** adalah Student Life
-        Management Assistant yang dirancang untuk membantu
-        siswa mengelola beberapa kebutuhan sehari-hari
-        dalam satu platform sederhana.
+        Management Assistant yang membantu siswa mengelola
+        kebutuhan sehari-hari dalam satu aplikasi sederhana.
         """
     )
 
     st.subheader("Fitur NEMO")
 
-    st.write("📊 **Cek Nilai**")
     st.write(
-        "Menghitung rata-rata nilai dan memberikan "
-        "predikat akademik."
+        "📊 **Cek Nilai**"
     )
 
-    st.write("📋 **Prioritas Tugas**")
     st.write(
-        "Menentukan prioritas tugas berdasarkan deadline "
+        "Menghitung rata-rata nilai."
+    )
+
+    st.write(
+        "📋 **Prioritas Tugas**"
+    )
+
+    st.write(
+        "Menentukan tugas berdasarkan deadline "
         "dan tingkat kesulitan."
     )
 
-    st.write("⏰ **Study Planner**")
     st.write(
-        "Membantu membagi waktu belajar berdasarkan "
+        "⏰ **Study Planner**"
+    )
+
+    st.write(
+        "Membagi waktu belajar berdasarkan "
         "jumlah tugas."
     )
 
-    st.write("💸 **Duid Tracker**")
+    st.write(
+        "💸 **Duid Tracker**"
+    )
+
     st.write(
         "Menghitung pemasukan, pengeluaran, "
         "dan sisa uang."
@@ -1054,11 +1034,7 @@ elif st.session_state.menu == "About NEMO":
     st.subheader("Teknologi")
 
     st.write(
-        "🐍 Python • Streamlit • GitHub • Google Colab"
-    )
-
-    st.info(
-        "Know What Matters. Do What Matters."
+        "Python • Streamlit • GitHub"
     )
 
 
