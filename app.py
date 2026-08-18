@@ -233,6 +233,8 @@ hr {
 
 if "menu" not in st.session_state:
     st.session_state.menu = "Home"
+if "dark_mode" not in st.session_state:
+    st.session_state.dark_mode = False
 
 
 # ============================================================
