@@ -25,7 +25,7 @@ st.divider()
 # MENU
 # ==============================
 
-menu = st.sidebar.selectbox(
+menu = st.selectbox(
     "Pilih fitur",
     [
         "🏠 Home",
