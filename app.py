@@ -50,7 +50,7 @@ if menu == "🏠 Home":
     )
 
     st.info(
-        "Hari ini mau ngapain?."
+        "Hari ini mau ngapain 😄?"
     )
 
 
