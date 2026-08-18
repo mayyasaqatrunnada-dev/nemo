@@ -1,8 +1,7 @@
 import streamlit as st
 
 # ============================================================
-# NEMO - Know What Matters.
-# Student Life Management Assistant
+# PAGE CONFIG
 # ============================================================
 
 st.set_page_config(
@@ -11,221 +10,6 @@ st.set_page_config(
     layout="centered"
 )
 
-# ============================================================
-# CUSTOM STYLE - CUTE TECH BLUE
-# ============================================================
-
-st.markdown("""
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
-
-html, body, [class*="css"] {
-    font-family: 'Nunito', sans-serif !important;
-}
-
-/* BACKGROUND */
-
-.stApp {
-    background:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(255, 122, 61, 0.18),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 90% 20%,
-            rgba(74, 159, 232, 0.25),
-            transparent 30%
-        ),
-        #DDF3FF;
-
-    color: #17202A !important;
-}
-
-
-/* HEADER */
-
-.nemo-title {
-    text-align: center;
-    font-size: 58px;
-    font-weight: 900;
-    letter-spacing: -2px;
-    color: #FF7A3D !important;
-    margin-top: 15px;
-    margin-bottom: -5px;
-}
-
-.nemo-subtitle {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 800;
-    color: #17202A !important;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-}
-
-.nemo-description {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 600;
-    color: #17202A !important;
-    margin-bottom: 35px;
-}
-
-
-/* SECTION */
-
-.section-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-    color: #17202A !important;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-
-/* CARD */
-
-.feature-card {
-    background: #F8FCFF;
-    border: 2px solid #B9DDF5;
-    border-radius: 24px;
-    padding: 22px;
-    min-height: 155px;
-    margin-bottom: 12px;
-
-    box-shadow:
-        0 8px 20px rgba(54, 112, 150, 0.12);
-}
-
-.feature-icon {
-    font-size: 34px;
-    margin-bottom: 5px;
-}
-
-.feature-title {
-    font-size: 19px;
-    font-weight: 900;
-    color: #17202A !important;
-    margin-top: 4px;
-}
-
-.feature-description {
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1.5;
-    color: #17202A !important;
-    margin-top: 5px;
-}
-
-
-/* SEMUA TOMBOL */
-
-div.stButton > button {
-    width: 100%;
-    border-radius: 14px;
-
-    border: 2px solid #FF7A3D;
-    background-color: #FF7A3D;
-
-    color: #17202A !important;
-
-    font-family: 'Nunito', sans-serif !important;
-    font-size: 14px;
-    font-weight: 900;
-
-    padding: 10px 15px;
-
-    box-shadow:
-        0 5px 12px rgba(255, 122, 61, 0.20);
-}
-
-div.stButton > button:hover {
-    background-color: #4A9FE8;
-    border-color: #4A9FE8;
-
-    color: #17202A !important;
-}
-
-
-/* SEMUA HEADING */
-
-h1, h2, h3, h4 {
-    font-family: 'Nunito', sans-serif !important;
-    font-weight: 900 !important;
-    color: #17202A !important;
-}
-
-
-/* TEKS STREAMLIT */
-
-p, label, span, div {
-    font-family: 'Nunito', sans-serif;
-}
-
-
-/* INPUT */
-
-input, textarea {
-    font-family: 'Nunito', sans-serif !important;
-    color: #17202A !important;
-}
-
-
-/* DROPDOWN */
-
-div[data-baseweb="select"] {
-    color: #17202A !important;
-}
-
-
-/* SUCCESS / INFO / WARNING / ERROR */
-
-div[data-testid="stAlert"] {
-    color: #17202A !important;
-}
-
-div[data-testid="stAlert"] p {
-    color: #17202A !important;
-}
-
-
-/* METRIC */
-
-[data-testid="stMetricValue"] {
-    color: #17202A !important;
-}
-
-[data-testid="stMetricLabel"] {
-    color: #17202A !important;
-}
-
-
-/* DIVIDER */
-
-hr {
-    border-color: #A9D5EF !important;
-}
-
-
-/* FOOTER */
-
-.footer {
-    text-align: center;
-    color: #17202A !important;
-
-    font-family: 'Nunito', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-
-    margin-top: 45px;
-    padding-bottom: 20px;
-}
-
-</style>
-""", unsafe_allow_html=True)
 
 # ============================================================
 # SESSION STATE
@@ -233,8 +17,302 @@ hr {
 
 if "menu" not in st.session_state:
     st.session_state.menu = "Home"
+
 if "dark_mode" not in st.session_state:
     st.session_state.dark_mode = False
+
+
+# ============================================================
+# THEME
+# ============================================================
+
+if st.session_state.dark_mode:
+
+    bg_color = "#DDF3FF"
+    card_color = "#171717"
+    main_text = "#FFFFFF"
+    secondary_text = "#FFFFFF"
+    border_color = "#303030"
+
+else:
+
+    bg_color = "#DDF3FF"
+    card_color = "#F8FCFF"
+    main_text = "#17202A"
+    secondary_text = "#17202A"
+    border_color = "#B9DDF5"
+
+
+# ============================================================
+# CUSTOM STYLE
+# ============================================================
+
+st.markdown(
+    f"""
+    <style>
+
+    @import url(
+        'https://fonts.googleapis.com/css2?family=Nunito:
+        wght@400;500;600;700;800;900&display=swap'
+    );
+
+    /* ==============================
+       GLOBAL
+       ============================== */
+
+    html, body, [class*="css"] {{
+        font-family: 'Nunito', sans-serif !important;
+    }}
+
+    .stApp {{
+        background: {bg_color} !important;
+        color: {main_text} !important;
+    }}
+
+
+    /* ==============================
+       HEADER
+       ============================== */
+
+    .nemo-title {{
+        text-align: center;
+
+        font-size: 58px;
+
+        font-weight: 900;
+
+        letter-spacing: -2px;
+
+        color: #FF7A3D !important;
+
+        margin-top: 15px;
+
+        margin-bottom: -5px;
+    }}
+
+    .nemo-subtitle {{
+        text-align: center;
+
+        font-size: 18px;
+
+        font-weight: 800;
+
+        color: {main_text} !important;
+
+        letter-spacing: 1px;
+    }}
+
+    .nemo-description {{
+        text-align: center;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        color: {secondary_text} !important;
+
+        margin-bottom: 25px;
+    }}
+
+
+    /* ==============================
+       SECTION
+       ============================== */
+
+    .section-title {{
+        text-align: center;
+
+        font-size: 24px;
+
+        font-weight: 900;
+
+        color: {main_text} !important;
+
+        margin-top: 15px;
+
+        margin-bottom: 20px;
+    }}
+
+
+    /* ==============================
+       FEATURE CARD
+       ============================== */
+
+    .feature-card {{
+
+        background: {card_color};
+
+        border: 2px solid {border_color};
+
+        border-radius: 24px;
+
+        padding: 22px;
+
+        min-height: 155px;
+
+        margin-bottom: 12px;
+
+        box-shadow:
+            0 8px 20px rgba(54, 112, 150, 0.15);
+    }}
+
+    .feature-icon {{
+        font-size: 34px;
+    }}
+
+    .feature-title {{
+
+        font-size: 19px;
+
+        font-weight: 900;
+
+        color: {main_text} !important;
+
+        margin-top: 5px;
+    }}
+
+    .feature-description {{
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        line-height: 1.5;
+
+        color: {secondary_text} !important;
+
+        margin-top: 5px;
+    }}
+
+
+    /* ==============================
+       BUTTON
+       ============================== */
+
+    div.stButton > button {{
+
+        width: 100%;
+
+        border-radius: 14px;
+
+        border: 2px solid #FF7A3D;
+
+        background-color: #FF7A3D;
+
+        color: #17202A !important;
+
+        font-family: 'Nunito', sans-serif !important;
+
+        font-size: 14px;
+
+        font-weight: 900;
+
+        padding: 10px 15px;
+
+        box-shadow:
+            0 5px 12px rgba(255, 122, 61, 0.20);
+    }}
+
+    div.stButton > button:hover {{
+
+        background-color: #4A9FE8;
+
+        border-color: #4A9FE8;
+
+        color: #17202A !important;
+    }}
+
+
+    /* ==============================
+       HEADINGS
+       ============================== */
+
+    h1, h2, h3, h4 {{
+
+        font-family: 'Nunito', sans-serif !important;
+
+        font-weight: 900 !important;
+
+        color: {main_text} !important;
+    }}
+
+
+    /* ==============================
+       NORMAL TEXT
+       ============================== */
+
+    p, label {{
+
+        color: {main_text} !important;
+
+        font-family: 'Nunito', sans-serif !important;
+    }}
+
+
+    /* ==============================
+       INPUT
+       ============================== */
+
+    input, textarea {{
+
+        font-family: 'Nunito', sans-serif !important;
+
+        background-color: #FFFFFF !important;
+
+        color: #17202A !important;
+
+        border-color: #A9D5EF !important;
+    }}
+
+
+    /* ==============================
+       METRIC
+       ============================== */
+
+    [data-testid="stMetricValue"] {{
+
+        color: {main_text} !important;
+    }}
+
+    [data-testid="stMetricLabel"] {{
+
+        color: {main_text} !important;
+    }}
+
+
+    /* ==============================
+       ALERT
+       ============================== */
+
+    [data-testid="stAlert"] p {{
+
+        color: {main_text} !important;
+    }}
+
+
+    /* ==============================
+       FOOTER
+       ============================== */
+
+    .footer {{
+
+        text-align: center;
+
+        color: {main_text} !important;
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        margin-top: 40px;
+
+        padding-bottom: 20px;
+    }}
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 # ============================================================
@@ -247,7 +325,7 @@ st.markdown(
 )
 
 st.markdown(
-    '<div class="nemo-subtitle"><i>Know What Matters.</i></div>',
+    '<div class="nemo-subtitle">Know What Matters.</div>',
     unsafe_allow_html=True
 )
 
@@ -260,101 +338,170 @@ st.markdown(
 
 
 # ============================================================
+# THEME BUTTON
+# ============================================================
+
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col2:
+
+    if st.session_state.dark_mode:
+
+        if st.button("☀️ Light Mode", key="theme_button"):
+            st.session_state.dark_mode = False
+            st.rerun()
+
+    else:
+
+        if st.button("🌙 Dark Mode", key="theme_button"):
+            st.session_state.dark_mode = True
+            st.rerun()
+
+
+# ============================================================
 # HOME
 # ============================================================
 
 if st.session_state.menu == "Home":
 
     st.markdown(
-        '<div class="section-title">Mau ngapain hari ini?</div>',
+        '<div class="section-title">'
+        'Mau ngapain hari ini?'
+        '</div>',
         unsafe_allow_html=True
     )
-
-    # --------------------------------------------------------
-    # CARD 1 & 2
-    # --------------------------------------------------------
 
     col1, col2 = st.columns(2)
 
     with col1:
 
-        st.markdown("""
-        <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <div class="feature-title">Cek Nilai</div>
-            <div class="feature-description">
-                Hitung rata-rata dan lihat performa akademikmu.
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(
+            """
+            <div class="feature-card">
 
-        if st.button("Buka Cek Nilai", key="home_nilai"):
+            <div class="feature-icon">📊</div>
+
+            <div class="feature-title">
+            Cek Nilai
+            </div>
+
+            <div class="feature-description">
+            Hitung rata-rata dan lihat performa akademikmu.
+            </div>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        if st.button(
+            "Buka Cek Nilai",
+            key="home_nilai"
+        ):
+
             st.session_state.menu = "Cek Nilai"
             st.rerun()
 
+
     with col2:
 
-        st.markdown("""
-        <div class="feature-card">
-            <div class="feature-icon">📋</div>
-            <div class="feature-title">Prioritas Tugas</div>
-            <div class="feature-description">
-                Tentukan tugas mana yang harus dikerjakan dulu.
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(
+            """
+            <div class="feature-card">
 
-        if st.button("Buka Prioritas", key="home_prioritas"):
+            <div class="feature-icon">📋</div>
+
+            <div class="feature-title">
+            Prioritas Tugas
+            </div>
+
+            <div class="feature-description">
+            Tentukan tugas mana yang harus dikerjakan dulu.
+            </div>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        if st.button(
+            "Buka Prioritas",
+            key="home_prioritas"
+        ):
+
             st.session_state.menu = "Prioritas Tugas"
             st.rerun()
 
 
-    # --------------------------------------------------------
-    # CARD 3 & 4
-    # --------------------------------------------------------
-
     col1, col2 = st.columns(2)
 
     with col1:
 
-        st.markdown("""
-        <div class="feature-card">
-            <div class="feature-icon">⏰</div>
-            <div class="feature-title">Study Planner</div>
-            <div class="feature-description">
-                Bagi waktu belajar berdasarkan jumlah tugas.
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(
+            """
+            <div class="feature-card">
 
-        if st.button("Buka Planner", key="home_planner"):
+            <div class="feature-icon">⏰</div>
+
+            <div class="feature-title">
+            Study Planner
+            </div>
+
+            <div class="feature-description">
+            Bagi waktu belajar berdasarkan jumlah tugas.
+            </div>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        if st.button(
+            "Buka Planner",
+            key="home_planner"
+        ):
+
             st.session_state.menu = "Study Planner"
             st.rerun()
 
+
     with col2:
 
-        st.markdown("""
-        <div class="feature-card">
-            <div class="feature-icon">💸</div>
-            <div class="feature-title">Duid Tracker</div>
-            <div class="feature-description">
-                Pantau pemasukan, pengeluaran, dan sisa uang.
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(
+            """
+            <div class="feature-card">
 
-        if st.button("Buka Duid Tracker", key="home_duid"):
+            <div class="feature-icon">💸</div>
+
+            <div class="feature-title">
+            Duid Tracker
+            </div>
+
+            <div class="feature-description">
+            Pantau pemasukan, pengeluaran, dan sisa uang.
+            </div>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        if st.button(
+            "Buka Duid Tracker",
+            key="home_duid"
+        ):
+
             st.session_state.menu = "Duid Tracker"
             st.rerun()
 
 
-    # --------------------------------------------------------
-    # ABOUT BUTTON
-    # --------------------------------------------------------
-
     st.divider()
 
-    if st.button("ℹ️ Tentang NEMO", key="home_about"):
+    if st.button(
+        "ℹ️ Tentang NEMO",
+        key="home_about"
+    ):
+
         st.session_state.menu = "About NEMO"
         st.rerun()
 
@@ -365,7 +512,11 @@ if st.session_state.menu == "Home":
 
 elif st.session_state.menu == "Cek Nilai":
 
-    if st.button("← Kembali ke Home", key="back_nilai"):
+    if st.button(
+        "← Kembali ke Home",
+        key="back_nilai"
+    ):
+
         st.session_state.menu = "Home"
         st.rerun()
 
@@ -410,26 +561,40 @@ elif st.session_state.menu == "Cek Nilai":
         if nama:
             nilai.append(angka)
 
-    if st.button("Hitung Nilai", key="hitung_nilai"):
+    if st.button(
+        "Hitung Nilai",
+        key="hitung_nilai"
+    ):
 
         if len(nilai) == 0:
 
-            st.warning("Masukkan minimal satu nilai.")
+            st.warning(
+                "Masukkan minimal satu nilai."
+            )
 
         else:
 
             rata = sum(nilai) / len(nilai)
 
             if rata >= 90:
+
                 predikat = "Sangat Baik"
+
             elif rata >= 80:
+
                 predikat = "Baik"
+
             elif rata >= 70:
+
                 predikat = "Cukup"
+
             else:
+
                 predikat = "Perlu Ditingkatkan"
 
-            st.success("Nilai berhasil dihitung.")
+            st.success(
+                "Nilai berhasil dihitung."
+            )
 
             col1, col2 = st.columns(2)
 
@@ -446,8 +611,6 @@ elif st.session_state.menu == "Cek Nilai":
                     "Predikat",
                     predikat
                 )
-
-            # INSIGHT
 
             if rata >= 90:
 
@@ -466,9 +629,8 @@ elif st.session_state.menu == "Cek Nilai":
             elif rata >= 70:
 
                 st.warning(
-                    "💡 Insight: Nilaimu cukup, tetapi masih perlu "
-                    "ditingkatkan. Fokus pada mata pelajaran "
-                    "dengan nilai terendah."
+                    "💡 Insight: Nilaimu cukup. "
+                    "Fokus pada mata pelajaran dengan nilai terendah."
                 )
 
             else:
@@ -485,7 +647,11 @@ elif st.session_state.menu == "Cek Nilai":
 
 elif st.session_state.menu == "Prioritas Tugas":
 
-    if st.button("← Kembali ke Home", key="back_prioritas"):
+    if st.button(
+        "← Kembali ke Home",
+        key="back_prioritas"
+    ):
+
         st.session_state.menu = "Home"
         st.rerun()
 
@@ -493,7 +659,7 @@ elif st.session_state.menu == "Prioritas Tugas":
 
     st.write(
         "NEMO menentukan prioritas berdasarkan deadline "
-        "dan tingkat kesulitan tugas."
+        "dan tingkat kesulitan."
     )
 
     jumlah = st.number_input(
@@ -508,7 +674,9 @@ elif st.session_state.menu == "Prioritas Tugas":
 
     for i in range(int(jumlah)):
 
-        st.subheader(f"Tugas {i + 1}")
+        st.subheader(
+            f"Tugas {i + 1}"
+        )
 
         nama = st.text_input(
             "Nama tugas",
@@ -534,30 +702,46 @@ elif st.session_state.menu == "Prioritas Tugas":
         if nama:
 
             if deadline <= 1:
+
                 urgensi = 5
+
             elif deadline <= 3:
+
                 urgensi = 4
+
             elif deadline <= 5:
+
                 urgensi = 3
+
             elif deadline <= 7:
+
                 urgensi = 2
+
             else:
+
                 urgensi = 1
 
             skor = urgensi + kesulitan
 
-            tugas.append({
-                "nama": nama,
-                "deadline": deadline,
-                "kesulitan": kesulitan,
-                "skor": skor
-            })
+            tugas.append(
+                {
+                    "nama": nama,
+                    "deadline": deadline,
+                    "kesulitan": kesulitan,
+                    "skor": skor
+                }
+            )
 
-    if st.button("Tentukan Prioritas", key="hitung_prioritas"):
+    if st.button(
+        "Tentukan Prioritas",
+        key="hitung_prioritas"
+    ):
 
         if not tugas:
 
-            st.warning("Masukkan minimal satu tugas.")
+            st.warning(
+                "Masukkan minimal satu tugas."
+            )
 
         else:
 
@@ -566,15 +750,25 @@ elif st.session_state.menu == "Prioritas Tugas":
                 reverse=True
             )
 
-            st.subheader("Urutan Prioritas")
+            st.subheader(
+                "Urutan Prioritas"
+            )
 
-            for i, data in enumerate(tugas, 1):
+            for i, data in enumerate(
+                tugas,
+                1
+            ):
 
                 if data["skor"] >= 8:
+
                     status = "🔴 Tinggi"
+
                 elif data["skor"] >= 5:
+
                     status = "🟠 Sedang"
+
                 else:
+
                     status = "🔵 Rendah"
 
                 st.write(
@@ -582,11 +776,13 @@ elif st.session_state.menu == "Prioritas Tugas":
                 )
 
                 st.write(
-                    f"Deadline: {data['deadline']} hari lagi"
+                    f"Deadline: "
+                    f"{data['deadline']} hari lagi"
                 )
 
                 st.write(
-                    f"Kesulitan: {data['kesulitan']}/5"
+                    f"Kesulitan: "
+                    f"{data['kesulitan']}/5"
                 )
 
                 st.write(
@@ -602,7 +798,11 @@ elif st.session_state.menu == "Prioritas Tugas":
 
 elif st.session_state.menu == "Study Planner":
 
-    if st.button("← Kembali ke Home", key="back_planner"):
+    if st.button(
+        "← Kembali ke Home",
+        key="back_planner"
+    ):
+
         st.session_state.menu = "Home"
         st.rerun()
 
@@ -629,11 +829,16 @@ elif st.session_state.menu == "Study Planner":
         step=1
     )
 
-    if st.button("Buat Rencana", key="buat_rencana"):
+    if st.button(
+        "Buat Rencana",
+        key="buat_rencana"
+    ):
 
         waktu_per_tugas = waktu / jumlah
 
-        st.success("Rencana berhasil dibuat.")
+        st.success(
+            "Rencana berhasil dibuat."
+        )
 
         st.metric(
             "Waktu per tugas",
@@ -651,14 +856,14 @@ elif st.session_state.menu == "Study Planner":
 
             st.info(
                 "💡 Insight: Waktu cukup. "
-                "Usahakan mengurangi distraksi selama belajar."
+                "Kurangi distraksi selama belajar."
             )
 
         else:
 
             st.warning(
                 "💡 Insight: Waktu cukup sempit. "
-                "Kerjakan tugas dengan prioritas tertinggi terlebih dahulu."
+                "Kerjakan tugas dengan prioritas tertinggi."
             )
 
 
@@ -668,7 +873,11 @@ elif st.session_state.menu == "Study Planner":
 
 elif st.session_state.menu == "Duid Tracker":
 
-    if st.button("← Kembali ke Home", key="back_duid"):
+    if st.button(
+        "← Kembali ke Home",
+        key="back_duid"
+    ):
+
         st.session_state.menu = "Home"
         st.rerun()
 
@@ -719,12 +928,17 @@ elif st.session_state.menu == "Duid Tracker":
 
         if kategori:
 
-            pengeluaran.append({
-                "kategori": kategori,
-                "nominal": nominal
-            })
+            pengeluaran.append(
+                {
+                    "kategori": kategori,
+                    "nominal": nominal
+                }
+            )
 
-    if st.button("Hitung Keuangan", key="hitung_keuangan"):
+    if st.button(
+        "Hitung Keuangan",
+        key="hitung_keuangan"
+    ):
 
         total = sum(
             item["nominal"]
@@ -792,7 +1006,11 @@ elif st.session_state.menu == "Duid Tracker":
 
 elif st.session_state.menu == "About NEMO":
 
-    if st.button("← Kembali ke Home", key="back_about"):
+    if st.button(
+        "← Kembali ke Home",
+        key="back_about"
+    ):
+
         st.session_state.menu = "Home"
         st.rerun()
 
@@ -811,7 +1029,8 @@ elif st.session_state.menu == "About NEMO":
 
     st.write("📊 **Cek Nilai**")
     st.write(
-        "Menghitung rata-rata nilai dan memberikan predikat akademik."
+        "Menghitung rata-rata nilai dan memberikan "
+        "predikat akademik."
     )
 
     st.write("📋 **Prioritas Tugas**")
@@ -822,18 +1041,20 @@ elif st.session_state.menu == "About NEMO":
 
     st.write("⏰ **Study Planner**")
     st.write(
-        "Membantu membagi waktu belajar berdasarkan jumlah tugas."
+        "Membantu membagi waktu belajar berdasarkan "
+        "jumlah tugas."
     )
 
     st.write("💸 **Duid Tracker**")
     st.write(
-        "Menghitung pemasukan, pengeluaran, dan sisa uang."
+        "Menghitung pemasukan, pengeluaran, "
+        "dan sisa uang."
     )
 
     st.subheader("Teknologi")
 
     st.write(
-        "🐍 Python  •  Streamlit  •  GitHub  •  Google Colab"
+        "🐍 Python • Streamlit • GitHub • Google Colab"
     )
 
     st.info(
