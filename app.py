@@ -12,93 +12,275 @@ st.set_page_config(
 )
 
 # ============================================================
-# CUSTOM STYLE
+# CUSTOM STYLE - CUTE TECH
 # ============================================================
 
 st.markdown("""
 <style>
 
-.stApp {
-    background-color: #0B0F14;
-    color: #F5F5F5;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html, body, [class*="css"] {
+    font-family: 'Nunito', sans-serif;
 }
+
+.stApp {
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 138, 61, 0.10),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(77, 168, 255, 0.10),
+            transparent 25%
+        ),
+        #0D1117;
+
+    color: #FFF7ED;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .nemo-title {
     text-align: center;
-    font-size: 52px;
-    font-weight: 800;
-    color: #FF7A00;
-    margin-top: 20px;
-    margin-bottom: 0px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 58px;
+    font-weight: 900;
+    letter-spacing: -2px;
+
+    color: #FF8A3D;
+
+    margin-top: 15px;
+    margin-bottom: -5px;
+
+    text-shadow:
+        0 0 20px rgba(255, 138, 61, 0.20);
 }
+
 
 .nemo-subtitle {
     text-align: center;
+
+    font-family: 'Nunito', sans-serif;
     font-size: 18px;
-    color: #2196F3;
-    margin-bottom: 8px;
+    font-weight: 700;
+
+    color: #4DA8FF;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
 }
+
 
 .nemo-description {
     text-align: center;
-    color: #B8C0CC;
-    font-size: 15px;
-    margin-bottom: 30px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #AAB4C0;
+
+    margin-bottom: 35px;
 }
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
 
 .section-title {
-    color: #FFFFFF;
-    font-size: 25px;
-    font-weight: 700;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    text-align: center;
+
+    font-size: 23px;
+    font-weight: 800;
+
+    color: #FFF7ED;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
+
+
+/* =========================================================
+   FEATURE CARD
+   ========================================================= */
 
 .feature-card {
-    background-color: #151B23;
-    border: 1px solid #263241;
-    border-radius: 16px;
-    padding: 20px;
-    min-height: 145px;
-    margin-bottom: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171D26,
+            #11161D
+        );
+
+    border: 1px solid #293443;
+
+    border-radius: 22px;
+
+    padding: 22px;
+
+    min-height: 155px;
+
+    margin-bottom: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition: all 0.2s ease;
 }
+
+
+/* CARD ICON */
 
 .feature-icon {
-    font-size: 30px;
+    font-size: 34px;
+
+    margin-bottom: 5px;
 }
 
+
+/* CARD TITLE */
+
 .feature-title {
+
     font-size: 19px;
-    font-weight: 700;
-    color: #FFFFFF;
+
+    font-weight: 800;
+
+    color: #FFF7ED;
+
+    margin-top: 4px;
+}
+
+
+/* CARD DESCRIPTION */
+
+.feature-description {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    color: #9CA8B6;
+
     margin-top: 5px;
 }
 
-.feature-description {
-    font-size: 13px;
-    color: #AAB4C0;
-}
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
 
 div.stButton > button {
+
     width: 100%;
-    border-radius: 10px;
-    border: 1px solid #FF7A00;
-    background-color: #FF7A00;
-    color: white;
-    font-weight: 700;
+
+    border-radius: 14px;
+
+    border: 1px solid #FF8A3D;
+
+    background-color: #FF8A3D;
+
+    color: #11161D;
+
+    font-family: 'Nunito', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    padding: 10px 15px;
+
+    transition: all 0.2s ease;
+
+    box-shadow:
+        0 5px 15px rgba(255, 138, 61, 0.15);
 }
+
 
 div.stButton > button:hover {
-    background-color: #2196F3;
-    border-color: #2196F3;
+
+    background-color: #4DA8FF;
+
+    border-color: #4DA8FF;
+
     color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(77, 168, 255, 0.20);
 }
 
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1, h2, h3 {
+
+    font-family: 'Nunito', sans-serif !important;
+
+    font-weight: 900 !important;
+
+    color: #FFF7ED !important;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+input {
+
+    font-family: 'Nunito', sans-serif !important;
+
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+hr {
+
+    border-color: #293443 !important;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 .footer {
+
     text-align: center;
-    color: #697586;
+
+    color: #667383;
+
+    font-family: 'Nunito', sans-serif;
+
     font-size: 12px;
-    margin-top: 40px;
+
+    font-weight: 600;
+
+    margin-top: 45px;
+
     padding-bottom: 20px;
 }
 
