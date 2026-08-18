@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 # ============================================================
-# CUSTOM STYLE - CUTE TECH
+# CUSTOM STYLE - CUTE TECH BLUE
 # ============================================================
 
 st.markdown("""
@@ -30,20 +30,21 @@ html, body, [class*="css"] {
 }
 
 .stApp {
+
     background:
         radial-gradient(
             circle at 10% 10%,
-            rgba(255, 138, 61, 0.10),
+            rgba(255, 122, 61, 0.18),
             transparent 25%
         ),
         radial-gradient(
             circle at 90% 20%,
-            rgba(77, 168, 255, 0.10),
-            transparent 25%
+            rgba(74, 159, 232, 0.25),
+            transparent 30%
         ),
-        #0D1117;
+        #DDF3FF;
 
-    color: #FFF7ED;
+    color: #17202A;
 }
 
 
@@ -52,30 +53,39 @@ html, body, [class*="css"] {
    ========================================================= */
 
 .nemo-title {
+
     text-align: center;
+
     font-family: 'Nunito', sans-serif;
+
     font-size: 58px;
+
     font-weight: 900;
+
     letter-spacing: -2px;
 
-    color: #FF8A3D;
+    color: #FF7A3D;
 
     margin-top: 15px;
+
     margin-bottom: -5px;
 
     text-shadow:
-        0 0 20px rgba(255, 138, 61, 0.20);
+        0 4px 0 rgba(23, 32, 42, 0.08);
 }
 
 
 .nemo-subtitle {
+
     text-align: center;
 
     font-family: 'Nunito', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
 
-    color: #4DA8FF;
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: #17202A;
 
     letter-spacing: 1px;
 
@@ -84,12 +94,14 @@ html, body, [class*="css"] {
 
 
 .nemo-description {
+
     text-align: center;
 
     font-size: 14px;
+
     font-weight: 600;
 
-    color: #AAB4C0;
+    color: #426075;
 
     margin-bottom: 35px;
 }
@@ -100,14 +112,17 @@ html, body, [class*="css"] {
    ========================================================= */
 
 .section-title {
+
     text-align: center;
 
-    font-size: 23px;
-    font-weight: 800;
+    font-size: 24px;
 
-    color: #FFF7ED;
+    font-weight: 900;
+
+    color: #17202A;
 
     margin-top: 10px;
+
     margin-bottom: 20px;
 }
 
@@ -118,16 +133,11 @@ html, body, [class*="css"] {
 
 .feature-card {
 
-    background:
-        linear-gradient(
-            145deg,
-            #171D26,
-            #11161D
-        );
+    background: #F8FCFF;
 
-    border: 1px solid #293443;
+    border: 2px solid #B9DDF5;
 
-    border-radius: 22px;
+    border-radius: 24px;
 
     padding: 22px;
 
@@ -136,36 +146,41 @@ html, body, [class*="css"] {
     margin-bottom: 12px;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,0.25);
-
-    transition: all 0.2s ease;
+        0 8px 20px rgba(54, 112, 150, 0.12);
 }
 
 
-/* CARD ICON */
+/* =========================================================
+   ICON
+   ========================================================= */
 
 .feature-icon {
+
     font-size: 34px;
 
     margin-bottom: 5px;
 }
 
 
-/* CARD TITLE */
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
 
 .feature-title {
 
     font-size: 19px;
 
-    font-weight: 800;
+    font-weight: 900;
 
-    color: #FFF7ED;
+    color: #17202A;
 
     margin-top: 4px;
 }
 
 
-/* CARD DESCRIPTION */
+/* =========================================================
+   CARD DESCRIPTION
+   ========================================================= */
 
 .feature-description {
 
@@ -175,7 +190,7 @@ html, body, [class*="css"] {
 
     line-height: 1.5;
 
-    color: #9CA8B6;
+    color: #607889;
 
     margin-top: 5px;
 }
@@ -191,39 +206,39 @@ div.stButton > button {
 
     border-radius: 14px;
 
-    border: 1px solid #FF8A3D;
+    border: 2px solid #FF7A3D;
 
-    background-color: #FF8A3D;
+    background-color: #FF7A3D;
 
-    color: #11161D;
+    color: #17202A;
 
     font-family: 'Nunito', sans-serif;
 
     font-size: 14px;
 
-    font-weight: 800;
+    font-weight: 900;
 
     padding: 10px 15px;
 
-    transition: all 0.2s ease;
+    transition: 0.2s;
 
     box-shadow:
-        0 5px 15px rgba(255, 138, 61, 0.15);
+        0 5px 12px rgba(255, 122, 61, 0.20);
 }
 
 
 div.stButton > button:hover {
 
-    background-color: #4DA8FF;
+    background-color: #4A9FE8;
 
-    border-color: #4DA8FF;
+    border-color: #4A9FE8;
 
     color: white;
 
     transform: translateY(-2px);
 
     box-shadow:
-        0 7px 18px rgba(77, 168, 255, 0.20);
+        0 7px 16px rgba(74, 159, 232, 0.25);
 }
 
 
@@ -237,7 +252,7 @@ h1, h2, h3 {
 
     font-weight: 900 !important;
 
-    color: #FFF7ED !important;
+    color: #17202A !important;
 }
 
 
@@ -258,7 +273,7 @@ input {
 
 hr {
 
-    border-color: #293443 !important;
+    border-color: #A9D5EF !important;
 
 }
 
@@ -271,13 +286,13 @@ hr {
 
     text-align: center;
 
-    color: #667383;
+    color: #638094;
 
     font-family: 'Nunito', sans-serif;
 
     font-size: 12px;
 
-    font-weight: 600;
+    font-weight: 700;
 
     margin-top: 45px;
 
@@ -286,7 +301,6 @@ hr {
 
 </style>
 """, unsafe_allow_html=True)
-
 
 # ============================================================
 # SESSION STATE
