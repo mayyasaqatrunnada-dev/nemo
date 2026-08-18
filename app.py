@@ -227,16 +227,6 @@ if st.session_state.menu == "Home":
         if st.button("Buka Duid Tracker", key="duid"):
             st.session_state.menu = "Duid Tracker"
             st.rerun()
-
-# ============================================================
-# ABOUT NEMO
-# ============================================================
-
-st.divider()
-
-if st.button("ℹ️ Tentang NEMO", key="about_button"):
-    st.session_state.menu = "About NEMO"
-    st.rerun()
     
 # ============================================================
 # CEK NILAI
