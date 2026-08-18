@@ -1,4 +1,25 @@
 import streamlit as st
+st.markdown("""
+<style>
+    .main-title {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    .description {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # ==============================
 # NEMO
@@ -15,9 +36,20 @@ st.set_page_config(
 # JUDUL
 # ==============================
 
-st.title("🐟 NEMO")
-st.caption("Know What Matters.")
-st.write("Student Life Management Assistant")
+st.markdown(
+    '<div class="main-title">🐟 NEMO</div>',
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    '<div class="subtitle"><i>Know What Matters.</i></div>',
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    '<div class="description">Student Life Management Assistant</div>',
+    unsafe_allow_html=True
+)
 
 st.divider()
 
