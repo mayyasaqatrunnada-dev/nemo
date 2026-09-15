@@ -845,7 +845,7 @@ elif st.session_state.menu == "DUID TRACKER":
         else:
             status = "OVER BUDGET"
 
-        st.markdown(
+                st.markdown(
             f"""
             <div class="result-box">
                 <div class="result-label">REMAINING MONEY</div>
@@ -853,4 +853,85 @@ elif st.session_state.menu == "DUID TRACKER":
                     Rp {sisa:,.0f}
                 </div>
                 <div class="result-label">
-                 
+                    {status}
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
+# =========================================================
+# ABOUT
+# =========================================================
+
+elif st.session_state.menu == "ABOUT":
+
+    st.markdown(
+        '<div class="section-title">SYSTEM // <span>ABOUT NEMO</span></div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        f"""
+        <div class="feature-card">
+
+            <div class="feature-title">
+                NEMO STUDENT
+            </div>
+
+            <div class="feature-description">
+
+                NEMO Student adalah Student Life Management Assistant
+                yang dirancang untuk membantu pelajar mengelola kebutuhan
+                sehari-hari dalam satu platform.
+
+                <br><br>
+
+                NEMO memiliki empat fitur utama:
+
+                <br><br>
+
+                📊 <b>Cek Nilai</b><br>
+                Menghitung rata-rata nilai.
+
+                <br><br>
+
+                ⚡ <b>Prioritas Tugas</b><br>
+                Menentukan tugas berdasarkan deadline dan kesulitan.
+
+                <br><br>
+
+                📚 <b>Study Planner</b><br>
+                Membantu membagi waktu belajar.
+
+                <br><br>
+
+                💸 <b>Duid Tracker</b><br>
+                Mencatat pemasukan dan pengeluaran.
+
+                <br><br>
+
+                Dibangun menggunakan Python dan Streamlit.
+
+            </div>
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+# =========================================================
+# FOOTER
+# =========================================================
+
+st.markdown(
+    """
+    <div class="footer">
+        NEMO STUDENT // KNOW WHAT MATTERS<br>
+        SYSTEM DESIGNED FOR STUDENT LIFE
+    </div>
+    """,
+    unsafe_allow_html=True
+)
