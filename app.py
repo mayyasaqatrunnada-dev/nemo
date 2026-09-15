@@ -880,4 +880,97 @@ elif st.session_state.menu == "ABOUT":
             ABOUT <span>NEMO</span>
         </div>
 
- 
+             <div class="feature-description">
+
+                NEMO Student adalah aplikasi sederhana untuk membantu
+                pelajar mengatur beberapa bagian kehidupan sekolah.
+
+                <br><br>
+
+                NEMO memiliki empat fitur utama:
+
+                <br><br>
+
+                📊 <b>Cek Nilai</b><br>
+                Menghitung rata-rata nilai.
+
+                <br><br>
+
+                ⚡ <b>Prioritas Tugas</b><br>
+                Membantu menentukan tugas yang perlu dikerjakan lebih dulu.
+
+                <br><br>
+
+                📚 <b>Study Planner</b><br>
+                Membagi waktu belajar.
+
+                <br><br>
+
+                💰 <b>Duid Tracker</b><br>
+                Mencatat pemasukan dan pengeluaran.
+
+            </div>
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+# =========================================================
+# NEMO FISH HELPER
+# =========================================================
+
+tips = {
+
+    "HOME":
+        "Hai! Aku NEMO 🐠<br><b>Tip:</b> Pilih fitur yang mau kamu gunakan.",
+
+    "CEK NILAI":
+        "Mau cek nilai?<br><b>Tip:</b> Masukkan nilai tiap mata pelajaran.",
+
+    "PRIORITAS TUGAS":
+        "Deadline mengejar? 😭<br><b>Tip:</b> Masukkan deadline dan tingkat kesulitan tugas.",
+
+    "STUDY PLANNER":
+        "Waktunya belajar.<br><b>Tip:</b> Masukkan waktu belajar yang tersedia.",
+
+    "DUID TRACKER":
+        "Uangmu sedang diamati. 👁️<br><b>Tip:</b> Catat pemasukan dan pengeluaranmu.",
+
+    "ABOUT":
+        "Aku NEMO!<br><b>Know What Matters.</b>"
+}
+
+current_tip = tips.get(
+    st.session_state.menu,
+    "Halo! Aku NEMO 🐠"
+)
+
+st.markdown(
+    f"""
+    <div class="fish-label">
+        {current_tip}
+    </div>
+
+    <div class="fish-shimeji">
+        🐠
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# =========================================================
+# FOOTER
+# =========================================================
+
+st.markdown(
+    """
+    <div class="footer">
+
+        NEMO STUDENT // KNOW WHAT MATTERS.<br>
+        SYSTEM DESIGNED FOR STUDENT LIFE
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
