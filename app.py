@@ -221,56 +221,6 @@ st.markdown(
         color: {ORANGE};
     }}
 
-    /* FISH */
-
-    .fish-shimeji {{
-        position: fixed;
-        right: 25px;
-        bottom: 25px;
-
-        font-size: 55px;
-        z-index: 9999;
-
-        animation: fishFloat 3s ease-in-out infinite;
-
-        filter: drop-shadow(0 5px 8px rgba(0,0,0,0.25));
-    }}
-
-    .fish-label {{
-        position: fixed;
-        right: 88px;
-        bottom: 82px;
-
-        max-width: 230px;
-        padding: 12px 15px;
-
-        background: {PANEL};
-        border: 1px solid {BLUE};
-        border-radius: 14px;
-
-        color: {TEXT};
-        font-size: 12px;
-        line-height: 1.5;
-
-        z-index: 9998;
-
-        box-shadow: 0 8px 20px rgba(0,0,0,0.20);
-    }}
-
-    @keyframes fishFloat {{
-        0% {{
-            transform: translateY(0px);
-        }}
-
-        50% {{
-            transform: translateY(-10px);
-        }}
-
-        100% {{
-            transform: translateY(0px);
-        }}
-    }}
-
     /* FOOTER */
 
     .footer {{
@@ -930,22 +880,50 @@ st.markdown(
 tips = {
     "HOME": "Hai! Aku NEMO 🐠<br><b>Tip:</b> Pilih fitur yang mau kamu gunakan.",
     "CEK NILAI": "Mau cek nilai?<br><b>Tip:</b> Masukkan nilai tiap mata pelajaran.",
-    "PRIORITAS TUGAS": "Deadline mengejar? 😭<br><b>Tip:</b> Masukkan deadline dan tingkat kesulitan tugas.",
+    "PRIORITAS TUGAS": "Deadline mengejar 😭<br><b>Tip:</b> Masukkan deadline dan tingkat kesulitan tugas.",
     "STUDY PLANNER": "Waktunya belajar.<br><b>Tip:</b> Masukkan waktu belajar yang tersedia.",
-    "DUID TRACKER": "Uangmu sedang diamati. 👁️<br><b>Tip:</b> Catat pemasukan dan pengeluaranmu.",
-    "ABOUT": "Aku NEMO!<br><b>Know What Matters.</b>"
+    "DUID TRACKER": "Uangmu sedang diamati 👁️<br><b>Tip:</b> Catat pemasukan dan pengeluaranmu.",
+    "ABOUT": "Aku NEMO! 🐠<br><b>Know What Matters.</b>"
 }
 
-current_tip = tips.get(st.session_state.menu, "Halo! Aku NEMO 🐠")
-
-fish_html = (
-    '<div class="fish-label">'
-    + current_tip +
-    '</div>'
-    '<div class="fish-shimeji">🐠</div>'
+current_tip = tips.get(
+    st.session_state.menu,
+    "Halo! Aku NEMO 🐠"
 )
 
-st.markdown(fish_html, unsafe_allow_html=True)
+st.markdown(
+    f"""
+    <div style="
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+        z-index: 999999;
+        font-size: 60px;
+        filter: drop-shadow(0 5px 8px rgba(0,0,0,0.3));
+    ">
+        🐠
+    </div>
+
+    <div style="
+        position: fixed;
+        right: 90px;
+        bottom: 85px;
+        z-index: 999998;
+        max-width: 230px;
+        padding: 12px 15px;
+        background: {PANEL};
+        border: 1px solid {BLUE};
+        border-radius: 14px;
+        color: {TEXT};
+        font-size: 12px;
+        line-height: 1.5;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    ">
+        {current_tip}
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # =========================================================
 # FOOTER
