@@ -140,35 +140,15 @@ st.markdown(
     /* FEATURE CARDS */
 
     .feature-card {{
-        background: {PANEL};
-        border: 1px solid {BORDER};
-important;
-    }}        border-radius: 18px;
-        padding: 24px;
-        min-height: 180px;
-        margin-bottom: 18px;
+    background: {PANEL};
+    border: 1px solid {BORDER};
+    border-radius: 18px;
+    padding: 24px;
+    min-height: 180px;
+    margin-bottom: 18px;
 
-        box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-    }}
-
-    .feature-icon {{
-        font-size: 32px;
-        margin-bottom: 12px;
-    }}
-
-    .feature-title {{
-        font-family: 'Orbitron', sans-serif;
-        color: {ORANGE};
-        font-size: 17px;
-        font-weight: 700;
-        margin-bottom: 8px;
-    }}
-
-    .feature-description {{
-        color: {MUTED};
-        font-size: 14px;
-        line-height: 1.6;
-    }}
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}}
 
     /* INFO BOX */
 
@@ -869,7 +849,7 @@ elif st.session_state.menu == "ABOUT":
     st.markdown(
         """
         <div class="section-title">ABOUT NEMO</div>
-        <div class="section-subtitle">
+        <div class="page-subtitle">
             STUDENT LIFE MANAGEMENT ASSISTANT
         </div>
         """,
@@ -878,22 +858,70 @@ elif st.session_state.menu == "ABOUT":
 
     st.markdown(
         """
-        <div class="about-card">
-            <h3>NEMO STUDENT</h3>
-            <p>
-                NEMO adalah asisten sederhana untuk membantu siswa
-                mengatur kehidupan akademik dan keuangan sehari-hari.
-            </p>
+        <div class="info-box">
+            <b>NEMO STUDENT</b><br><br>
+            NEMO adalah asisten sederhana untuk membantu siswa
+            mengatur kehidupan sekolah sehari-hari.
+            <br><br>
 
-            <p><b>FEATURES</b></p>
-            <p>📊 Cek Nilai — menghitung rata-rata nilai.</p>
-            <p>📋 Prioritas Tugas — menentukan tugas yang perlu dikerjakan lebih dulu.</p>
-            <p>📚 Study Planner — membagi waktu belajar.</p>
-            <p>💰 Duid Tracker — mencatat pemasukan dan pengeluaran.</p>
+            <b>FEATURES</b><br>
+            📊 Cek Nilai — menghitung rata-rata nilai.<br>
+            ⚡ Prioritas Tugas — menentukan tugas yang harus dikerjakan lebih dulu.<br>
+            📚 Study Planner — membagi waktu belajar.<br>
+            💰 Duid Tracker — mencatat pemasukan dan pengeluaran.
+            <br><br>
+
+            <b>KNOW WHAT MATTERS.</b>
         </div>
         """,
         unsafe_allow_html=True
     )
+
+
+# =========================================================
+# NEMO FISH HELPER
+# =========================================================
+
+tips = {
+    "HOME": "Hai! Aku NEMO 🐠<br><b>Tip:</b> Pilih fitur yang mau kamu gunakan.",
+    "CEK NILAI": "Mau cek nilai?<br><b>Tip:</b> Masukkan nilai tiap mata pelajaran.",
+    "PRIORITAS TUGAS": "Deadline mengejar? 😭<br><b>Tip:</b> Masukkan deadline dan tingkat kesulitan tugas.",
+    "STUDY PLANNER": "Waktunya belajar.<br><b>Tip:</b> Masukkan waktu belajar yang tersedia.",
+    "DUID TRACKER": "Uangmu sedang diamati. 👁️<br><b>Tip:</b> Catat pemasukan dan pengeluaranmu.",
+    "ABOUT": "Aku NEMO!<br><b>Know What Matters.</b>"
+}
+
+current_tip = tips.get(
+    st.session_state.menu,
+    "Halo! Aku NEMO 🐠"
+)
+
+fish_html = (
+    '<div class="fish-label">'
+    + current_tip
+    + '</div>'
+    '<div class="fish-shimeji">🐠</div>'
+)
+
+st.markdown(
+    fish_html,
+    unsafe_allow_html=True
+)
+
+
+# =========================================================
+# FOOTER
+# =========================================================
+
+st.markdown(
+    """
+    <div class="footer">
+        NEMO STUDENT // KNOW WHAT MATTERS.<br>
+        SYSTEM DESIGNED FOR STUDENT LIFE
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # =========================================================
 # NEMO FISH HELPER
