@@ -868,41 +868,28 @@ elif st.session_state.menu == "ABOUT":
 
     st.markdown(
         """
-        <div class="page-title">
-            ABOUT <span>NEMO</span>
+        <div class="section-title">ABOUT NEMO</div>
+        <div class="section-subtitle">
+            STUDENT LIFE MANAGEMENT ASSISTANT
         </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-             <div class="feature-description">
+    st.markdown(
+        """
+        <div class="about-card">
+            <h3>NEMO STUDENT</h3>
+            <p>
+                NEMO adalah asisten sederhana untuk membantu siswa
+                mengatur kehidupan akademik dan keuangan sehari-hari.
+            </p>
 
-                NEMO Student adalah aplikasi sederhana untuk membantu
-                pelajar mengatur beberapa bagian kehidupan sekolah.
-
-                <br><br>
-
-                NEMO memiliki empat fitur utama:
-
-                <br><br>
-
-                📊 <b>Cek Nilai</b><br>
-                Menghitung rata-rata nilai.
-
-                <br><br>
-
-                ⚡ <b>Prioritas Tugas</b><br>
-                Membantu menentukan tugas yang perlu dikerjakan lebih dulu.
-
-                <br><br>
-
-                📚 <b>Study Planner</b><br>
-                Membagi waktu belajar.
-
-                <br><br>
-
-                💰 <b>Duid Tracker</b><br>
-                Mencatat pemasukan dan pengeluaran.
-
-            </div>
-
+            <p><b>FEATURES</b></p>
+            <p>📊 Cek Nilai — menghitung rata-rata nilai.</p>
+            <p>📋 Prioritas Tugas — menentukan tugas yang perlu dikerjakan lebih dulu.</p>
+            <p>📚 Study Planner — membagi waktu belajar.</p>
+            <p>💰 Duid Tracker — mencatat pemasukan dan pengeluaran.</p>
         </div>
         """,
         unsafe_allow_html=True
@@ -913,30 +900,15 @@ elif st.session_state.menu == "ABOUT":
 # =========================================================
 
 tips = {
-
-    "HOME":
-        "Hai! Aku NEMO 🐠<br><b>Tip:</b> Pilih fitur yang mau kamu gunakan.",
-
-    "CEK NILAI":
-        "Mau cek nilai?<br><b>Tip:</b> Masukkan nilai tiap mata pelajaran.",
-
-    "PRIORITAS TUGAS":
-        "Deadline mengejar? 😭<br><b>Tip:</b> Masukkan deadline dan tingkat kesulitan tugas.",
-
-    "STUDY PLANNER":
-        "Waktunya belajar.<br><b>Tip:</b> Masukkan waktu belajar yang tersedia.",
-
-    "DUID TRACKER":
-        "Uangmu sedang diamati. 👁️<br><b>Tip:</b> Catat pemasukan dan pengeluaranmu.",
-
-    "ABOUT":
-        "Aku NEMO!<br><b>Know What Matters.</b>"
+    "HOME": "Hai! Aku NEMO 🐠<br><b>Tip:</b> Pilih fitur yang mau kamu gunakan.",
+    "CEK NILAI": "Mau cek nilai?<br><b>Tip:</b> Masukkan nilai tiap mata pelajaran.",
+    "PRIORITAS TUGAS": "Deadline mengejar? 😭<br><b>Tip:</b> Masukkan deadline dan tingkat kesulitan tugas.",
+    "STUDY PLANNER": "Waktunya belajar.<br><b>Tip:</b> Masukkan waktu belajar yang tersedia.",
+    "DUID TRACKER": "Uangmu sedang diamati. 👁️<br><b>Tip:</b> Catat pemasukan dan pengeluaranmu.",
+    "ABOUT": "Aku NEMO!<br><b>Know What Matters.</b>"
 }
 
-current_tip = tips.get(
-    st.session_state.menu,
-    "Halo! Aku NEMO 🐠"
-)
+current_tip = tips.get(st.session_state.menu, "Halo! Aku NEMO 🐠")
 
 st.markdown(
     f"""
