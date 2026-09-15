@@ -894,32 +894,32 @@ current_tip = tips.get(
 st.markdown(
     f"""
     <style>
-@keyframes fishFloat {{
-    0% {{
-        transform: translateY(0px);
-    }}
+    @keyframes fishFloat {{
+        0% {{
+            transform: translateY(0px);
+        }}
 
-    50% {{
-        transform: translateY(-12px);
-    }}
+        50% {{
+            transform: translateY(-12px);
+        }}
 
-    100% {{
-        transform: translateY(0px);
+        100% {{
+            transform: translateY(0px);
+        }}
     }}
-}}
-</style>
+    </style>
 
- <div style="
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    z-index: 999999;
-    font-size: 60px;
-    filter: drop-shadow(0 5px 8px rgba(0,0,0,0.3));
-    animation: fishFloat 3s ease-in-out infinite;
-">
-    🐠
-</div>
+    <div style="
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+        z-index: 999999;
+        font-size: 60px;
+        animation: fishFloat 3s ease-in-out infinite;
+        filter: drop-shadow(0 5px 8px rgba(0,0,0,0.3));
+    ">
+        🐠
+    </div>
 
     <div style="
         position: fixed;
