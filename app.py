@@ -142,7 +142,8 @@ st.markdown(
     .feature-card {{
         background: {PANEL};
         border: 1px solid {BORDER};
-        border-radius: 18px;
+important;
+    }}        border-radius: 18px;
         padding: 24px;
         min-height: 180px;
         margin-bottom: 18px;
@@ -224,8 +225,7 @@ st.markdown(
     }}
 
     input {{
-        border-radius: 10px !important;
-    }}
+        border-radius: 10px !
 
     /* BUTTONS */
 
@@ -317,24 +317,16 @@ st.markdown(
 # HEADER
 # =========================================================
 
-st.markdown(
-    f"""
-    <div class="topbar">
-
-        <div>
-            <div class="logo">
-                NE<span>MO</span>
-            </div>
-
-            <div class="subtitle">
-                STUDENT LIFE MANAGEMENT ASSISTANT
-            </div>
-        </div>
-
-    </div>
-    """,
-    unsafe_allow_html=True
+header_html = (
+    '<div class="topbar">'
+    '<div>'
+    '<div class="logo">NE<span>MO</span></div>'
+    '<div class="subtitle">STUDENT LIFE MANAGEMENT ASSISTANT</div>'
+    '</div>'
+    '</div>'
 )
+
+st.markdown(header_html, unsafe_allow_html=True)
 
 # =========================================================
 # NAVIGATION
