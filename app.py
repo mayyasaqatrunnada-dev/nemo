@@ -910,18 +910,14 @@ tips = {
 
 current_tip = tips.get(st.session_state.menu, "Halo! Aku NEMO 🐠")
 
-st.markdown(
-    f"""
-    <div class="fish-label">
-        {current_tip}
-    </div>
-
-    <div class="fish-shimeji">
-        🐠
-    </div>
-    """,
-    unsafe_allow_html=True
+fish_html = (
+    '<div class="fish-label">'
+    + current_tip +
+    '</div>'
+    '<div class="fish-shimeji">🐠</div>'
 )
+
+st.markdown(fish_html, unsafe_allow_html=True)
 
 # =========================================================
 # FOOTER
